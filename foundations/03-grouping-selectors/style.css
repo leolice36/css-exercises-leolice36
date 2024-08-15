@@ -1,0 +1,16 @@
+.black {
+    background-color: black;
+    color: white;
+
+}
+
+.yellow {
+    background-color: yellow;
+}
+
+.button {
+    font-size: 28px;
+    font-family: Helvetica, "Times New Roman" sans-serif;
+}
+
+/* I used 3 classes instead of 2 classes and just chaining them */

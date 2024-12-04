@@ -9,6 +9,30 @@ html {
   height: 100%;
   padding: 16px;
   box-sizing: border-box;
+  display: grid;
+  --factor1: 100px;
+  --factor2: 3;
+  --factor3: 1;
+  --row-1: calc(var(--factor1)*1*var(--factor3));
+  --row-2: calc(var(--factor1)*1*var(--factor3));
+  --row-3: calc(var(--factor1)*5*var(--factor3));
+  --row-4: calc(var(--factor1)*1*var(--factor3));
+  --column-1: calc(var(--factor1)*1*var(--factor2));
+  --column-2: calc(var(--factor1)*3*var(--factor2));
+
+  grid-template: 
+    var(--row-1) var(--row-2) var(--row-3) var(--row-4)
+     / var(--column-1) var(--column-2);
+
+  grid-template-areas: 
+    "hhh hhh"
+    "sss nnn"
+    "sss aaa"
+    "fff fff"
+  ;
+
+  gap: 15px;
+  justify-content: center;
 }
 
 .container div {
@@ -17,27 +41,32 @@ html {
   font-family: Helvetica;
   font-weight: bold;
   color: white;
-  border-radius: 15px;
+  border-radius: 10px;
 }
 
 .header {
   background-color: #006157;
+  grid-area: hhh;
 }
 
 .sidebar {
   background-color: #005B94;
+  grid-area: sss;
 }
 
 .nav {
   background-color: #642cde;
+  grid-area: nnn;
 }
 
 .article {
   background-color: #7E1DC3;
+  grid-area: aaa;
 }
 
 .footer {
   background-color: #393f4d;
+  grid-area: fff;
 }
 
 .article p {
